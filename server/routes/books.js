@@ -1,8 +1,12 @@
 const express = require("express");
 const recordsRoutes = express.Router();
 const dbObj = require("../connection");
+const bodyParser = require('body-parser');
+var urlencodedParser = bodyParser.urlencoded({ extended: false });
 
 const ObjectId = require("mongodb").ObjectId;
+
+const Review = require('../models/review-model');
 
 recordsRoutes.route("/").get((req, res) => {
     let db_connection = dbObj.getDb("test");
@@ -32,6 +36,20 @@ recordsRoutes.route("/books/:author").get((req, res) => {
         } 
         res.json(result);
     });
+});
+
+recordsRoutes.route("/create").post((req, res) => {
+    let db_connection = dbObj.getDb("test");
+    const newReview = new Review({
+        author: req.body.author,
+        title: req.body.title,
+        thoughts: req.body.thoughts
+    });
+    
+    db_connection.collection("books").insertOne(newReview, (err, result) => {
+        if (err) console.log(err);
+        res.json(result);
+    })
 });
 
 module.exports = recordsRoutes;

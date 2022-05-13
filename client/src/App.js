@@ -21,19 +21,6 @@ const App = (props) => {
 
   return(
   <Layout style={{minHeight:"100vh"}}>
-    {/* <Header
-      style={{
-        zIndex: 1,
-        width: '100%',
-      }}
-    >
-      <Menu
-        theme="dark"
-        mode="horizontal"
-        defaultSelectedKeys={['2']}>
-          
-        </Menu>
-    </Header> */}
     <NavBar/>
     <Content
       className="site-layout"
@@ -57,7 +44,7 @@ const App = (props) => {
         textAlign: 'center',
       }}
     >
-      Ant Design ©2018 Created by Ant UED
+      My Book Reviews 2022 Created by :)
     </Footer>
   </Layout>
   );

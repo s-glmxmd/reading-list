@@ -21,7 +21,7 @@ const NavBar = () => {
             theme="dark"
             mode="horizontal"
             defaultSelectedKeys={['2']}>
-                <Menu.Item label={"Create"}>
+                <Menu.Item label={"Create"} key="create">
                     <NavLink to="/Create">
                         Create entry
                     </NavLink>
