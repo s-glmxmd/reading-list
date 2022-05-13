@@ -1,23 +1,14 @@
 import React from 'react';
-
-import { useNavigate } from "react-router-dom";
 import './index.css';
-import { Layout, Menu, Breadcrumb } from 'antd';
 
-import { Routes } from 'react-router';
-import { BrowserRouter as Router } from 'react-router-dom';
-import { Route, Switch } from 'react-router-dom';
-import { Button } from 'antd';
+import { Layout } from 'antd';
 
-import Create from './components/Create';
 import NavBar from './components/NavBar';
+import BookList from './components/BookList';
 
-const { Header, Content, Footer } = Layout;
-const array = [1, 2, 3, 4];
+const {  Content, Footer } = Layout;
 
-
-
-const App = (props) => {
+const App = () => {
 
   return(
   <Layout style={{minHeight:"100vh"}}>
@@ -37,6 +28,7 @@ const App = (props) => {
           minHeight:"70vh"
         }}
       >
+        <BookList/>
       </div>
     </Content>
     <Footer

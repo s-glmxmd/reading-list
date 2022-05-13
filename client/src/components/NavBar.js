@@ -1,14 +1,12 @@
 import React from "react";
-import '../index.css';
-import { Layout, Menu } from 'antd';
-// We import bootstrap to make our application look better.
-import "bootstrap/dist/css/bootstrap.css";
-
-// We import NavLink to utilize the react router.
 import { NavLink } from "react-router-dom";
-import Create from "./Create";
 
-const { Header, Content, Footer } = Layout;
+import '../index.css';
+
+import { Layout, Menu } from 'antd';
+
+const { Header} = Layout;
+
 const NavBar = () => {
     return (
         <Header

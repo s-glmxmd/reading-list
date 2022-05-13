@@ -8,10 +8,12 @@ const ObjectId = require("mongodb").ObjectId;
 
 const Review = require('../models/review-model');
 
-recordsRoutes.route("/").get((req, res) => {
+recordsRoutes.route("/books").get((req, res) => {
     let db_connection = dbObj.getDb("test");
-    db_connection.collection("books").find({}).forEach((result) => {
-        console.log(result.author);
+    db_connection.collection("books").find({}).toArray((err, result) => {
+        if (err) {
+            console.log(err);
+        } 
         res.json(result);
     });
 });
@@ -37,6 +39,7 @@ recordsRoutes.route("/books/:author").get((req, res) => {
         res.json(result);
     });
 });
+
 
 recordsRoutes.route("/create").post((req, res) => {
     let db_connection = dbObj.getDb("test");

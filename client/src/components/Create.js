@@ -1,12 +1,9 @@
-import React, { useState, useRef } from "react";
+import React, { useRef } from "react";
 import { useNavigate } from "react-router";
-import { Tag } from "antd";
-import { NavLink } from "react-router-dom";
-import { Layout, Form, Input, Button, Select } from "antd";
+import { Layout, Form, Input, Button } from "antd";
 import NavBar from "./NavBar";
 
 const { Content, Footer } = Layout;
-const { Option } = Select;
 
 const layout = {
     labelCol: { span: 8 },
@@ -16,15 +13,13 @@ const layout = {
     wrapperCol: { offset: 8, span: 16 },
   };
 
+
+
 const Create = () => {
     const navigate = useNavigate();
     const [form] = Form.useForm();
 
     const formRef = useRef(null);
-
-    const onAuthorChamge = (value) => {
-        form.setFieldsValue({author: value + " is a great author!"});
-    }
 
     const onFinish = async (values) => {
         // This will send a post request to update the data in the database.
@@ -66,7 +61,7 @@ const Create = () => {
                         <Form.Item name="thoughts" label="Thoughts" rules={[{required:true}]}>
                             <Input/>
                         </Form.Item>
-                        <Form.Item>
+                        <Form.Item {...tailLayout}>
                             <Button type="primary" htmlType="submit">
                                 Submit
                             </Button>
