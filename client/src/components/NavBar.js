@@ -1,9 +1,12 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 
+
 import '../index.css';
 
-import { Layout, Menu } from 'antd';
+import { Layout, Menu, Button} from 'antd';
+
+import { PlusCircleFilled } from '@ant-design/icons';
 
 const { Header} = Layout;
 
@@ -18,10 +21,12 @@ const NavBar = () => {
             <Menu
             theme="dark"
             mode="horizontal"
-            defaultSelectedKeys={['2']}>
+            >
                 <Menu.Item label={"Create"} key="create">
                     <NavLink to="/Create">
-                        Create entry
+                        <Button icon={<PlusCircleFilled />}>
+                            Create Book Review
+                        </Button>
                     </NavLink>
                 </Menu.Item>
             </Menu>

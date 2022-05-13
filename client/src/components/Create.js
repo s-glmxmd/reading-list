@@ -1,9 +1,12 @@
 import React, { useRef } from "react";
 import { useNavigate } from "react-router";
-import { Layout, Form, Input, Button } from "antd";
-import NavBar from "./NavBar";
+import { NavLink } from "react-router-dom";
 
-const { Content, Footer } = Layout;
+import { Layout, Form, Input, Button, Menu, } from "antd";
+
+import { HomeFilled } from '@ant-design/icons';
+
+const { Header, Content, Footer } = Layout;
 
 const layout = {
     labelCol: { span: 8 },
@@ -36,7 +39,25 @@ const Create = () => {
 
     return (
         <Layout style={{minHeight:"100vh"}}>
-            <NavBar/>
+            <Header
+        style={{
+        zIndex: 1,
+        width: '100%',
+        }}
+        >
+            <Menu
+            theme="dark"
+            mode="horizontal"
+            >
+                <Menu.Item label={"Create"} key="create">
+                    <NavLink to="/">
+                        <Button icon={<HomeFilled />}>
+                            Return to list
+                        </Button>
+                    </NavLink>
+                </Menu.Item>
+            </Menu>
+    </Header>
             <Content
                 className="site-layout"
                 style={{
