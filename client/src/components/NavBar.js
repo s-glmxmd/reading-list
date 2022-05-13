@@ -3,8 +3,9 @@ import { NavLink } from "react-router-dom";
 
 
 import '../index.css';
+import picture from '../open-book.png';
 
-import { Layout, Menu, Button} from 'antd';
+import { Layout, Menu, Button, Image } from 'antd';
 
 import { PlusCircleFilled } from '@ant-design/icons';
 
@@ -22,6 +23,11 @@ const NavBar = () => {
             theme="dark"
             mode="horizontal"
             >
+                <Image
+                    width={50}
+                    src={picture}
+                    preview={false}
+                    />
                 <Menu.Item label={"Create"} key="create">
                     <NavLink to="/Create">
                         <Button icon={<PlusCircleFilled />}>

@@ -2,9 +2,11 @@ import React, { useRef } from "react";
 import { useNavigate } from "react-router";
 import { NavLink } from "react-router-dom";
 
-import { Layout, Form, Input, Button, Menu, } from "antd";
+import { Layout, Form, Input, Button, Menu, Image } from "antd";
 
 import { HomeFilled } from '@ant-design/icons';
+
+import picture from '../open-book.png';
 
 const { Header, Content, Footer } = Layout;
 
@@ -49,6 +51,11 @@ const Create = () => {
                 theme="dark"
                 mode="horizontal"
                 >
+                    <Image
+                    width={50}
+                    src={picture}
+                    preview={false}
+                    />
                     <Menu.Item label={"Create"} key="create">
                         <NavLink to="/">
                             <Button icon={<HomeFilled />}>
