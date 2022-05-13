@@ -40,24 +40,24 @@ const Create = () => {
     return (
         <Layout style={{minHeight:"100vh"}}>
             <Header
-        style={{
-        zIndex: 1,
-        width: '100%',
-        }}
-        >
-            <Menu
-            theme="dark"
-            mode="horizontal"
+            style={{
+            zIndex: 1,
+            width: '100%',
+            }}
             >
-                <Menu.Item label={"Create"} key="create">
-                    <NavLink to="/">
-                        <Button icon={<HomeFilled />}>
-                            Return to list
-                        </Button>
-                    </NavLink>
-                </Menu.Item>
-            </Menu>
-    </Header>
+                <Menu
+                theme="dark"
+                mode="horizontal"
+                >
+                    <Menu.Item label={"Create"} key="create">
+                        <NavLink to="/">
+                            <Button icon={<HomeFilled />}>
+                                Return to list
+                            </Button>
+                        </NavLink>
+                    </Menu.Item>
+                </Menu>
+            </Header>
             <Content
                 className="site-layout"
                 style={{
